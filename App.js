@@ -11,21 +11,20 @@ import { createStackNavigator } from '@react-navigation/stack';
 const Stack = createStackNavigator();
 
 const myOptions={
-  title:"人員列表",
+  title:"所有人員列表",
   headerTintColor:"white",
   headerStyle:{
-  backgroundColor:"#006aff"}
+    backgroundColor:"#006aff"}
   }
 
 function App() {
   return (
     <View style={styles.container}>
+      
       <Stack.Navigator>
-          <Stack.Screen name="Home" 
-          component={Home}
-          options={myOptions} />
-          <Stack.Screen name="Create" component={CreateEmployee}  options={{...myOptions,title:"Create Employee"}} />
-          <Stack.Screen name="Profile" component={Profile}  options={{...myOptions,title:"Profile"}} />        
+          <Stack.Screen name="Home" component={Home} options={myOptions} />
+          <Stack.Screen name="Create" component={CreateEmployee}  options={{...myOptions,title:"建立員工"}} />
+          <Stack.Screen name="Profile" component={Profile}  options={{...myOptions,title:"個人檔案"}} />        
       </Stack.Navigator>
       
     </View>
@@ -34,8 +33,12 @@ function App() {
 
 export default ()=>{
   return (
+
     <NavigationContainer>
+      {/* <Profile /> */}
       <App />
+      {/* <Home /> */}
+      {/* <CreateEmployee /> */} 
       {/* <Profile /> */}
     </NavigationContainer>
   )

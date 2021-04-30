@@ -10,25 +10,25 @@ const Home = (props) => {
         {id:"4", name:"老公公",email:"abc96@gmail.com",salary:"8 lpa",phone:"1230",position:"write dev",picture:"https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"}
         ]
         
-
     const renderList = ((item)=>{
         return (
-                      
+                    
             <Card style={styles.mycard}
-              onPress = {() => navigation.navigate("Profile",{item})} >
-                               
-              <View style={styles.cardView}>
-                  <Image
-                  style={{ width: 60, height: 60, borderRadius: 30 }}
-                  source={{
-                      uri:"https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-                  }}
-                  />
-                  <View style={{marginLeft:10}}>
-                      <Text style={styles.text}>{item.name}</Text>
-                      <Text >{item.postion}</Text>
-                  </View>
-              </View>
+             onPress={() => navigation.navigate("Profile",{item})} >
+                                             
+                <View style={styles.cardView}>
+                    <Image
+                    style={{ width: 60, height: 60, borderRadius: 30 }}
+                    source={{
+                        uri:"https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    }}
+                    />
+                    <View style={{marginLeft:10}}>
+                        <Text style={styles.text}>{item.name}</Text>
+                        <Text >{item.postion}</Text>
+                    </View>
+                </View>
+              
             </Card>
         )
     })
@@ -54,14 +54,14 @@ const Home = (props) => {
       renderItem = {({item})=>{
         return renderList(item)
         }}
-        keyExtractor={item=>item.id}
+        keyExtractor = {item=>item.id}
       />
-      <FAB onPress={()=>navigation.navigate("Create")}
-            style={styles.fab}
-            small={false}
-            icon="plus"
-            theme={{colors:{accent:"#006aff"}}}
-      />
+        <FAB onPress={()=>navigation.navigate("Create")}
+              style={styles.fab}
+              small={false}
+              icon="plus"
+              theme={{colors:{accent:"#006aff"}}}
+        />
 
     </View>
   );
